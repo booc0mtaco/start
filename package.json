@@ -1,0 +1,36 @@
+{
+  "name": "start-page",
+  "version": "0.0.1",
+  "description": "Untropy.net start page SPA",
+  "main": "src/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/booc0mtaco/start.git"
+  },
+  "keywords": [
+    "spa",
+    "utility"
+  ],
+  "author": "Andrew Holloway <booc0mtaco@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/booc0mtaco/start/issues"
+  },
+  "homepage": "https://github.com/booc0mtaco/start#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-csso": "^3.0.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8",
+    "mocha": "^3.4.2"
+  },
+  "dependencies": {
+    "vue": "^2.4.2"
+  }
+}

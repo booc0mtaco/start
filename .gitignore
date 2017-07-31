@@ -1,0 +1,6 @@
+## don't commit the outputted files
+/dist/
+
+## Ignore system and other intermediate files
+/tmp/
+/node_modules/
