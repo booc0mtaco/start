@@ -3,9 +3,25 @@
 <head>
     <link rel="stylesheet" href="css/start.css"/>
     <title>Start Page</title>
+    <script type="text/javascript" src="https://unpkg.com/vue"></script>
 </head>
 <body>
     <h1>Start v0.0.1</h1>
+
+    <div id="app">
+        <section class="button-row" v-for="row in items">
+            <start-button v-for="button in row" :label="button.label" :destination="button.destination" :breach="button.breach" :key="button.breach"></start-button>
+        </section>
+    </div>
+
+    <script type="text/x-template" id="start-button">
+        <div class="start-button">
+            <span>{{ breach }}</span>
+            <a href="javascript://" v-on:click="goToUrl">
+                {{ label }}
+            </a>
+        </div>
+    </script>
 
     <script src="js/index.js"></script>
 <body>
