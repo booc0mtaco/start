@@ -1,6 +1,7 @@
 const gulp = require('gulp');
 const minifyCSS = require('gulp-csso');
-const gutil = require('gulp-util');
+const through2 = require('through2');
+const minimist = require('minimist');
 const uglify = require('gulp-uglify');
 
 function html(cb) {
@@ -16,8 +17,10 @@ function css(cb) {
 
 function js(cb) {
     // for production, run `--type production`
-   return gulp.src('src/js/*.js')
-        .pipe(gutil.env.type === 'production' ? uglify() : gutil.noop())
+    const argv = minimist(process.argv.slice(2));
+    return gulp.src('src/js/*.js')
+        .pipe(argv.type === 'production' ? uglify() : through2.obj(
+            (chunk, enc, cb) => cb(null, chunk)))
         .pipe(gulp.dest('dist/js'));
 }
 

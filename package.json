@@ -32,8 +32,9 @@
     "gulp": "^4.0.2",
     "gulp-csso": "^4.0.1",
     "gulp-uglify": "^3.0.0",
-    "gulp-util": "^3.0.8",
-    "mocha": "^7.2.0"
+    "minimist": "^1.2.5",
+    "mocha": "^7.2.0",
+    "through2": "^3.0.1"
   },
   "dependencies": {
     "vue": "^2.6.11"
