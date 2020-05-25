@@ -1,32 +1,31 @@
-var gulp = require('gulp');
-var minifyCSS = require('gulp-csso');
-var gutil = require('gulp-util');
-var uglify = require('gulp-uglify');
+const gulp = require('gulp');
+const minifyCSS = require('gulp-csso');
+const gutil = require('gulp-util');
+const uglify = require('gulp-uglify');
 
-gulp.task('html', function() {
+function html(cb) {
     return gulp.src('src/*.html')
 	    .pipe(gulp.dest('dist'));
-});
+}
 
-gulp.task('css', function() {
+function css(cb) {
     return gulp.src('src/css/*.css')
-	    .pipe(minifyCSS())
-	    .pipe(gulp.dest('dist/css'));
-});
+        .pipe(minifyCSS())
+        .pipe(gulp.dest('dist/css'));
+}
 
-gulp.task('js', function() {
+function js(cb) {
     // for production, run `--type production`
    return gulp.src('src/js/*.js')
-	    .pipe(gutil.env.type === 'production' ? uglify() : gutil.noop())
-	    .pipe(gulp.dest('dist/js'));
-});
+        .pipe(gutil.env.type === 'production' ? uglify() : gutil.noop())
+        .pipe(gulp.dest('dist/js'));
+}
 
-gulp.task('watch', function() {
-    gulp.watch('src/js/**/*.js', ['js']);
-    gulp.watch('src/*.html', ['html']);
-    gulp.watch('src/css/**/*.css', ['css']);
-});
+function watch(cb) {
+    gulp.watch('src/js/**/*.js', js);
+    gulp.watch('src/*.html', html);
+    gulp.watch('src/css/**/*.css', css);
+}
 
-gulp.task('default', [ 'html', 'css', 'js']);
-
-gulp.task('start', ['html', 'css', 'js', 'watch']);
+exports.default = gulp.parallel(html, css, js);
+exports.start = gulp.series(gulp.parallel(html, css, js), watch);
