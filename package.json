@@ -37,7 +37,7 @@
     "through2": "^3.0.1"
   },
   "dependencies": {
-    "vue": "^2.6.11"
+    "vue": "^2.6.12"
   },
   "config": {
     "commitizen": {
