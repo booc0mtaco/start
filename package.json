@@ -28,13 +28,12 @@
   },
   "homepage": "https://github.com/booc0mtaco/start#readme",
   "devDependencies": {
-    "cz-conventional-changelog": "^3.2.0",
+    "cz-conventional-changelog": "^3.3.0",
     "gulp": "^4.0.2",
     "gulp-csso": "^4.0.1",
-    "gulp-uglify": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
     "minimist": "^1.2.5",
-    "mocha": "^7.2.0",
-    "through2": "^3.0.1"
+    "through2": "^4.0.2"
   },
   "dependencies": {
     "vue": "^2.6.12"
