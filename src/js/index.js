@@ -6,7 +6,7 @@
     // register components
     Vue.component('start-button', {
         template: '#start-button',
-        props: ['label', 'destination', 'breach'],
+        props: ['label', 'destination', 'trigger'],
         methods: {
             goToUrl: function() {
                 var win = window.open(this.destination, '_blank');
@@ -26,62 +26,62 @@
                 [{
                     label: 'Untropy',
                     destination: 'http://untropy.net/',
-                    breach: 'u'
+                    trigger: 'u'
                 },
                 {
                     label: 'Vue JS',
                     destination: 'http://vuejs.org/',
-                    breach: 'i'
+                    trigger: 'i'
                 },
                 {
                     label: 'Flexbox',
                     destination: 'https://developer.mozilla.org/en-US/docs/Web/CSS/flex',
-                    breach: 'o'
+                    trigger: 'o'
                 },
                 {
                     label: 'CSS Grid',
                     destination: 'https://css-tricks.com/snippets/css/complete-guide-grid/',
-                    breach: 'p'
+                    trigger: 'p'
                 }],
                 [{
                     label: 'resp. flex',
                     destination: 'http://blog.teamtreehouse.com/responsive-design-of-the-future-with-flexbox',
-                    breach: 'j'
+                    trigger: 'j'
                 },
                 {
                     label: 'MVVM',
                     destination: 'https://msdn.microsoft.com/en-us/library/hh848246.aspx',
-                    breach: 'k'
+                    trigger: 'k'
                 },
                 {
                     label: 'Webpack',
                     destination: 'https://webpack.js.org',
-                    breach: 'l'
+                    trigger: 'l'
                 },
                 {
                     label: 'ESLint',
                     destination: 'https://eslint.org',
-                    breach: ';'
+                    trigger: ';'
                 }],
                 [{
                     label: 'TypeScript',
                     destination: 'http://www.typescriptlang.org',
-                    breach: 'm'
+                    trigger: 'm'
                 },
                 {
                     label: 'Sass',
                     destination: 'http://sass-lang.com/guide',
-                    breach: ','
+                    trigger: ','
                 },
                 {
                     label: 'Mocha',
                     destination: 'https://mochajs.org',
-                    breach: '.'
+                    trigger: '.'
                 },
                 {
                     label: 'Sanity',
                     destination: 'https://en.wikipedia.org/wiki/Exposure_therapy',
-                    breach: '/'
+                    trigger: '/'
                 }]
             ]
         }
