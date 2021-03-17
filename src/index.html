@@ -8,18 +8,17 @@
 <body>
     <main id="app">
         <h1>Start v{{version}}</h1>
-        <section>
+        <section class="button-section">
             <start-button v-for="item in items" :label="item.label" :destination="item.destination" :trigger="item.trigger" :key="item.trigger"></start-button>
         </section>
     </main>
 
     <!-- Component templates -->
     <script type="text/x-template" id="start-button">
-        <div class="start-button">
-            <span class="trigger-key">{{ trigger }}</span>
-            <a href="javascript://" v-on:click="goToUrl">
-                {{ label }}
-            </a>
+        <div class="start-button-container">
+            <button class="start-button" v-on:click="goToUrl" :title="trigger">
+                <span>{{ label }}</span
+            </button>
         </div>
     </script>
 
