@@ -9,11 +9,16 @@
 }
 
 /* entry point - resets */
-html, body {
+html {
+    min-height: 100%;
+}
+
+body {
   margin: 0;
   padding: 0;
 
-  height: 100%;
+  /* top-left corner */
+  background-image: linear-gradient(135deg, #acf, #3366a0);
 }
 
 *, *::before, *::after {
@@ -22,11 +27,7 @@ html, body {
 
 /* layout styles */
 main {
-  height: 100%;
   width: 100%;
-
-  /* top-left corner */
-  background-image: linear-gradient(135deg, #acf, #3366a0);
 }
 
 h1 {
