@@ -3,6 +3,8 @@
     // handle reading from the locale storage, or using a default value in 
     // matrix format
 
+    const ARROW_KEY_NAMES = ['ArrowRight', 'ArrowLeft', 'ArrowUp', 'ArrowDown'];
+
     // Data (can be read from localstore or bootstrapped with the following):
     var items = [
         {
@@ -76,7 +78,12 @@
                 var win = window.open(this.destination, '_blank');
                 win.focus();
             }
-        }
+        },
+        computed: {
+            ariaName: function() {
+                return `Press "${this.trigger}" to open ${this.label} in a new tab`;
+            },
+        },
     });
 
     // Editing happens at the app-level
@@ -86,7 +93,16 @@
             handleKeyPress: function(keycode) {
                 const found = this.items.filter(item => item.trigger === keycode);
                 found.length && window.open(found[0].destination, '_blank').focus();
-            }
+            },
+            handleDecrement: function() {
+                // TODO: reference to current focused element and set focus on next one in grid
+                // x.parentElement.nextSibling.getQuerySelector('button');
+                console.log('move to previous sibling');
+            },
+            handleIncrement: function() {
+                // Same as above, but use previousSibling or some Vue functionality
+                console.log('move to next sibling');
+            },
         },
         data: {
             items,
@@ -95,7 +111,22 @@
     });
 
     // TODO: Find the best Vue-y way to handle attaching to page
-    window.addEventListener('keypress', event => {
-        app.handleKeyPress(event.key);
-    })
+    window.addEventListener('keydown', event => {
+        // do not handle this unless there is no other key held while being pressed
+        if (!event.altKey && !event.ctrlKey && !event.metaKey) {
+            app.handleKeyPress(event.key);
+        }
+        
+        if (ARROW_KEY_NAMES.includes(event.key)) {
+            /* Logic:
+             * - left and up arrows decrements position by 1
+             * - right and down arrows increments position by 1 
+             */
+            if (event.key == 'ArrowLeft' || event.key == 'ArrowUp') {
+                app.handleDecrement();
+            } else if (event.key == 'ArrowRight' || event.key == 'ArrowDown') {
+                app.handleIncrement();
+            }
+        }
+    });
 })();
