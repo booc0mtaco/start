@@ -70,7 +70,7 @@ h1 {
   box-shadow: -5px -5px 5px rgba(255, 255, 255, 0.2), -1px -1px 0 rgba(255, 255, 255, 0.3), 1px 1px 0px rgba(0, 0, 0, 0.15), 5px 5px 5px rgba(0, 0, 0, 0.5);
   background-image: linear-gradient(135deg, #00000000, #00000090);
   
-  transition: background-color ease-in-out 50ms;
+  transition: background-color ease-in-out 50ms, transform ease-in-out 100ms;
   
   width: 100%;
   min-width: 100px;
@@ -90,5 +90,6 @@ h1 {
 /* a11y support */
 .start-button:focus {
   outline: none;
-  text-decoration: underline;
+
+  transform: scale(1.2);
 }
