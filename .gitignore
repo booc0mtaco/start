@@ -1,6 +1,12 @@
+## Project files and folders (from editors)
+.nova/
+
 ## don't commit the outputted files
 /dist/
 
 ## Ignore system and other intermediate files
 /tmp/
 /node_modules/
+
+## macOS stuff
+.DS_Store
