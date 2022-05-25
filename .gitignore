@@ -7,6 +7,7 @@
 ## Ignore system and other intermediate files
 /tmp/
 /node_modules/
+package-lock.json
 
 ## macOS stuff
 .DS_Store
